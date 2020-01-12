@@ -1,0 +1,225 @@
+/* 设置顶部导航容器的样式 */
+.topBar {
+  height: 40px;
+  width: 100%;
+  background-color: #333333;
+}
+
+/* 设置顶部导航条样式 */
+.topBar-wrapper {
+  line-height: 40px;
+}
+
+/* 统一导航条内所有超链接的样式 */
+.topBar-wrapper a {
+  display: block;
+}
+
+/* 统一导航条内所有超链接的移入样式 */
+.topBar-wrapper a:hover {
+  color: white;
+}
+
+/* 设置中间分割线 */
+.topBar-wrapper .line {
+  font-size: 12px;
+}
+
+/* 设置所有 servier和li样式 */
+.service,
+.topBar-wrapper li {
+  float: left;
+  color: #424242;
+  margin-left: 8px;
+}
+
+.app {
+  /* 设置相对定位，给三角形进行决定定位 */
+  position: relative;
+}
+
+.app:hover .qccode {
+  /* display: block; */
+  height: 148px;
+}
+
+/* 设置鼠标移入时候，在app最前面添加一个元素 */
+.app:hover:before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border: 8px solid transparent;
+  border-bottom-color: #ffffff;
+  border-top: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+/* 设置下拉二维码样式 */
+.app .qccode {
+  position: absolute;
+  width: 124px;
+  left: -38px;
+  /* 覆盖原有的行高 */
+  line-height: 1;
+  background-color: #ffffff;
+  /* 设置内联元素居中显示 */
+  text-align: center;
+  /* 设置阴影效果 */
+  box-shadow: 0 0 10px rgb(0, 0, 0, .3);
+  /* 
+  隐藏元素
+  display: none;
+  */
+  height: 0px;
+  overflow: hidden;
+  /* 当高度发生变化的时候，在0.3秒慢慢增长 */
+  transition: height 0.3s;
+}
+
+
+/* 设置二维码图片样式 */
+.app .qccode img {
+  width: 90px;
+  margin: 17px;
+  margin-bottom: 10px;
+}
+
+/* 设置二维码中的小米商城文字样式 */
+.app .qccode span {
+  font-size: 14px;
+  color: #000000;
+}
+
+/* 设置个人信息和购物车统一样式 */
+.userinfo,
+.shop-cat {
+  float: right;
+}
+
+/* 设置购物车样式 */
+.shop-cat {
+  margin-left: 26px;
+  position: relative;
+}
+
+/* 设置购物车鼠标移入样式 */
+.shop-cat:hover a {
+  background-color: #ffffff;
+  color: #ff6700;
+}
+
+.shop-cat:hover .shopInfo {
+  height: 100px;
+}
+
+/* 设置购物车样式内超链接 */
+.shop-cat a {
+  /* 设置超链接宽度，使可点击的区域变大 */
+  width: 120px;
+  font-size: 12px;
+  background-color: #424242;
+  /* 设置内联元素居中显示 */
+  text-align: center;
+}
+
+/* 设置购物车内的矢量图样式 */
+.shop-cat a>i {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.shopInfo {
+  position: absolute;
+  left: -196px;
+  width: 316px;
+  font-size: 12px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(0, 0, 0, .3);
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.shopInfo span {
+  line-height: 100px
+}
+
+/* 设置头部样式 */
+.header {
+  height: 100px;
+}
+
+
+.header .logo {
+  position: relative;
+  float: left;
+  width: 55px;
+  height: 55px;
+  margin-top: 22.5px;
+  overflow: hidden;
+  text-indent: -999px;
+}
+
+/* 设置头部 logo 样式*/
+.header .logo a {
+  position: absolute;
+  left: 0;
+  width: 55px;
+  height: 55px;
+  background-color: #FD6310;
+  background-image: url(../img/mi-logo.png);
+  background-position: center;
+  transition: left 0.3s;
+}
+
+.header .logo .home {
+  background-image: url(../img/mi-home.png);
+  left: -55px;
+}
+
+.header .logo:hover .mi {
+  left: 55px;
+}
+
+.header .logo:hover .home {
+  /* 存在BUG，需要保留1像素 */
+  left: 1px;
+}
+
+/*设置头部导航条样式  */
+.header .nav {
+  height: 100px;
+  width: 850px;
+  float: left;
+}
+
+.header .nav ul {
+  float: left;
+  padding-left: 65px;
+}
+
+.header .nav ul li {
+  float: left;
+  height: 100px;
+  line-height: 100px;
+}
+
+.header .nav ul li:hover a {
+  color: #ff6700;
+}
+
+.header .nav a {
+  color: #000000;
+  font-size: 16px;
+  display: block;
+  margin-right: 20px;
+}
+
+.header .nav ul .all-projuct {
+  visibility: hidden;
+}

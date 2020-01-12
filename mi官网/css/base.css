@@ -1,0 +1,25 @@
+body {
+  /* 设置屏幕最小宽度，防止内容溢出 */
+  min-width: 1226px;
+  /* 设置默认字体大小，行高和字体 */
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+
+.w {
+  width: 1226px;
+  /*居中 */
+  margin: 0px auto;
+}
+
+a {
+  text-decoration: none;
+  color: #b0b0b0;
+  font-size: 12px;
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: table;
+  clear: both;
+}
