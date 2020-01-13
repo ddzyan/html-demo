@@ -152,6 +152,8 @@
 /* 设置头部样式 */
 .header {
   height: 100px;
+  /* 开启相对定位，用于下拉商品的定位 */
+  position: relative;
 }
 
 
@@ -173,6 +175,7 @@
   height: 55px;
   background-color: #FD6310;
   background-image: url(../img/mi-logo.png);
+  /* 设置背景图片位置，水平和垂直居中显示 */
   background-position: center;
   transition: left 0.3s;
 }
@@ -187,14 +190,12 @@
 }
 
 .header .logo:hover .home {
-  /* 存在BUG，需要保留1像素 */
-  left: 1px;
+  left: 0px;
 }
 
 /*设置头部导航条样式  */
 .header .nav {
   height: 100px;
-  width: 850px;
   float: left;
 }
 
@@ -222,4 +223,27 @@
 
 .header .nav ul .all-projuct {
   visibility: hidden;
+}
+
+/* 设置下拉商品样式 */
+.nav .goods-info {
+  /* 脱离文档流，默认宽度将占满相对元素 */
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  height: 0px;
+  width: 100%;
+  background-color: #ffffff;
+  transition: height 0.3s;
+}
+
+/* 鼠标移入li时候显示下拉商品
+使用的使兄弟选择器，和~匹配符号，选择li下面的所有.goods-info元素
+*/
+.header .nav ul .show-goods:hover~.goods-info,
+.nav .goods-info:hover {
+  height: 288px;
+  border-top: 1px solid rgb(224, 224, 224);
+  /* 设置阴影，去除上部阴影 */
+  box-shadow: 0 3px 5px rgb(0, 0, 0, .3);
 }
