@@ -8,8 +8,8 @@
   <title>选择器</title>
   <style>
     .box1 {
-      width: 300px;
-      height: 300px;
+      width: 500px;
+      height: 500px;
       background-color: #bfa;
     }
 
@@ -46,6 +46,13 @@
       height: 200px;
       background-color: blue;
     }
+
+    /* 选择.box3元素后的所有test元素 */
+    .box1>.box3~.test {
+      width: 50px;
+      height: 50px;
+      background-color: blueviolet;
+    }
   </style>
 </head>
 
@@ -54,6 +61,8 @@
     <div class="box3"></div>
     <div class="box4"></div>
     <div class="box5"></div>
+    <div class="test">test</div>
+    <div class="test">test</div>
   </div>
   <div class="box2"></div>
 </body>
