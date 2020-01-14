@@ -78,6 +78,7 @@
   overflow: hidden;
   /* 当高度发生变化的时候，在0.3秒慢慢增长 */
   transition: height 0.3s;
+  z-index: 9999;
 }
 
 
@@ -199,18 +200,18 @@
   float: left;
 }
 
-.header .nav ul {
+.header .nav>ul {
   float: left;
   padding-left: 65px;
 }
 
-.header .nav ul li {
+.header .nav>ul>li {
   float: left;
   height: 100px;
   line-height: 100px;
 }
 
-.header .nav ul li:hover a {
+.header .nav>ul>li:hover>a {
   color: #ff6700;
 }
 
@@ -235,6 +236,7 @@
   width: 100%;
   background-color: #ffffff;
   transition: height 0.3s;
+  z-index: 999;
 }
 
 /* 鼠标移入li时候显示下拉商品
@@ -246,4 +248,220 @@
   border-top: 1px solid rgb(224, 224, 224);
   /* 设置阴影，去除上部阴影 */
   box-shadow: 0 3px 5px rgb(0, 0, 0, .3);
+}
+
+/* 设置头部搜索框 */
+.search {
+  float: right;
+  height: 50px;
+  width: 296px;
+  margin-top: 25px;
+}
+
+.search .search-form .search-inp {
+  box-sizing: border-box;
+  border: none;
+  float: left;
+  width: 244px;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.search .search-form .search-btn {
+  box-sizing: border-box;
+  border: none;
+  padding: 0px;
+  float: left;
+  width: 52px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid rgb(224, 224, 224);
+  border-left: none;
+  color: #616161;
+}
+
+.search .search-form .search-inp:focus,
+.search .search-form .search-inp:focus+button {
+  border-color: #ff6700;
+}
+
+.search .search-form .search-btn:hover {
+  background-color: #ff6700;
+  color: #ffffff;
+}
+
+/* 设置左侧导航条 */
+.all-goods-info {
+  position: relative;
+}
+
+.all-goods-info>.left-nav {
+  position: absolute;
+  padding: 20px 0;
+  width: 234px;
+  height: 420px;
+  left: -120px;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+
+.all-goods-info>.left-nav a {
+  margin-right: 0px;
+  font-size: 14px;
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  color: #ffffff;
+  padding: 0 30px;
+}
+
+.all-goods-info>.left-nav i {
+  float: right;
+  line-height: 42px;
+}
+
+.all-goods-info>.left-nav a:hover {
+  background-color: #ff6700;
+  color: #ffffff;
+}
+
+/* 设置banner样式 */
+.banner-wrapper {
+  height: 460px;
+}
+
+.banner {
+  position: relative;
+  height: 460px;
+}
+
+.banner-wrapper .banner .img-list li {
+  /* 设置定位会导致li脱离文档流，则banner无法获取子元素高度*/
+  position: absolute;
+}
+
+/* 通过调整图片层级，来决定显示哪个 */
+.banner-wrapper .banner img {
+  /* img的宽度是包含块的100% */
+  width: 100%;
+  vertical-align: top;
+}
+
+/* 设置五个导航点 */
+.pointer {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.pointer a {
+  float: left;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px rgba(255, 255, 255, .6) solid;
+  background-color: rgba(0, 0, 0, .4);
+  margin-left: 6px;
+}
+
+.pointer a:hover,
+.pointer .show-pointer {
+  border: 2px rgba(0, 0, 0, .4) solid;
+  background-color: rgba(255, 255, 255, .6);
+}
+
+/* 设置banner左右按钮 */
+.prev-next a {
+  width: 41px;
+  height: 69px;
+  background-image: url('../img/icon-slides.png');
+  /* 这是绝对定位，脱离文档流 */
+  position: absolute;
+  /* 设置顶部和底部距离为0，然后magin设置auto，设置垂直居中 */
+  top: 0;
+  bottom: 0;
+  margin: auto 0px;
+}
+
+.prev-next .prev:hover {
+  background-position: 0px 0px;
+}
+
+.prev-next .prev {
+  left: 234px;
+  background-position: -84px 0px;
+}
+
+.prev-next .next:hover {
+  background-position: -44px 0px;
+}
+
+.prev-next .next {
+  right: 0px;
+  background-position: -126px 0px;
+}
+
+/* 设置左侧固定菜单 */
+.top-menu {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  right: 50%;
+  margin-right: -640px;
+  bottom: 0px;
+  /* 
+    由于left为auto 所以，设置margin-left，会导致left动态调整，使两者之和还是50%
+    left + margin-left + width + margin-right + right = 视口宽度
+    auto + 0 + 26px + 0px + 50% = 视口宽度
+  */
+}
+
+.top-menu ul li {
+  height: 40px;
+  width: 25px;
+  border: 0.8px solid #f5f5f5;
+  text-align: center;
+}
+
+.top-menu>ul>li>img {
+  width: 20px;
+  margin-top: 10px;
+}
+
+/* 设置左侧固定菜单栏详细信息 */
+
+.show-phone {
+  position: relative;
+}
+
+.show-phone:hover .top-menu-info {
+  opacity: 100%;
+}
+
+.show-phone .top-menu-info {
+  padding: 14px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity .3s;
+  top: 0px;
+  left: -130px;
+  width: 100px;
+  height: 180px;
+  background-color: white;
+  border: 1px solid #f5f5f5;
+}
+
+.show-phone .top-menu-info>img {
+  display: block;
+  width: 100px;
+  margin: 6px auto;
+}
+
+.show-phone .top-menu-info>span {
+  display: block;
+  width: 82px;
+  color: #757575;
+  margin: 14px auto 0;
+  text-align: center;
 }

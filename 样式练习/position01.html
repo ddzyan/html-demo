@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定位练习demo1</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .banner-wrapper {
+      height: 460px;
+      background-color: burlywood;
+    }
+
+    /* 块元素的宽度默认占满父元素
+      高度默认由子元素撑开
+    */
+    .banner {
+      position: relative;
+      /* 
+      块元素的高度默认由子元素撑开，
+      但是Img元素开启了绝对定位，脱离了文档流，导致高度塌陷，img溢出
+      */
+      width: 1226px;
+      /* 设置块元素垂直居中 */
+      margin: 0px auto;
+      background-color: cadetblue;
+    }
+
+    .banner img {
+      /* 
+      开启绝对定位，使元素脱离文档流
+      不再占有原有位置 
+      参考位置使最近设置定位的祖先元素，并且position不是static
+      */
+      position: absolute;
+      /* 由于开启了绝对定位，导致宽度默认占有包含（最近开启定位的祖先元素）元素 */
+      width: 100%;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner-wrapper">
+    <div class="banner">
+      <ul>
+        <a href="">
+          <img src="./img/banner1.jpg" alt="">
+        </a>
+        <a href="">
+          <img src="./img/banner1.jpg" alt="">
+        </a>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>
